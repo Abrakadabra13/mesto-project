@@ -1,0 +1,30 @@
+.profile__info {
+  display: grid;
+  padding-top: 22px;
+  padding-bottom: 25px;
+  /* padding-right: 244px; */
+  max-width: 580px;
+  /* align-self: stretch; */
+  grid-template-columns: 312px 1fr;
+  grid-template-rows: 2fr;
+  grid-template-areas:
+  "title rename"
+  "subtitle subtitle";
+  align-items: baseline;
+}
+
+@media (min-width: 426px) and (max-width: 1024px) {
+  .profile__info {
+    grid-area: info;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .profile__info {
+    grid-area: info;
+    padding-bottom: 36px;
+    grid-template-columns: 199px 1fr;
+    grid-column-gap: 10px;
+    max-width: 217px;
+  }
+}

@@ -1,0 +1,23 @@
+.popup__container {
+  box-sizing: border-box;
+  margin: auto;
+  background-color: white;
+  z-index: 1;
+  width: 430px;
+  height: 330px;
+  position: fixed;
+  left: calc(50% - 215px);
+  top: calc(50% - 165px);
+  padding: 34px 36px 37px 36px;
+  border-radius: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .popup__container {
+    width: 282px;
+    height: 322px;
+    left: calc(50% - 141px);
+    top: calc(50% - 82.5px);
+    padding: 25px 22px 25px 22px;
+  }
+}

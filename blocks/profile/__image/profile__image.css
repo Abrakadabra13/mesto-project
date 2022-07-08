@@ -1,0 +1,19 @@
+.profile__image {
+  width: 168.75px;
+  height: 127.5px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .profile__image {
+    grid-area: image;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .profile__image {
+    grid-area: image;
+    padding: 0;
+    display: contents;
+  }
+}

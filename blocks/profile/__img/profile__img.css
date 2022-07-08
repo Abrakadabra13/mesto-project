@@ -1,0 +1,13 @@
+.profile__img {
+  padding: 7px;
+  width: 10px;
+  height: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .profile__img {
+    padding: 5.25px;
+    width: 7.5px;
+    height: 7.5px;
+  }
+}

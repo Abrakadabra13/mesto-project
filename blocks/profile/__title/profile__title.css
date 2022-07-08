@@ -1,0 +1,25 @@
+.profile__title {
+  margin: 0;
+  width: 294px;
+  padding-bottom: 16px;
+  padding-right: 18px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  grid-area: title;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .profile__title {
+    font-size: 27px;
+    line-height: 32.68px;
+    width: 189px;
+    height: 26px;
+    padding: 0;
+    padding-left: 10px;
+    padding-bottom: 14px;
+    padding-left: 10px;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,17 @@
+.profile__edit {
+  grid-area: rename;
+  border: solid 1px #FFFFFF;
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .profile__edit {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.profile__edit:hover {
+  opacity: 60%;
+}
