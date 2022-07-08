@@ -9,82 +9,72 @@
 <body>
   <div class="page">
     <div class="popup popup_opened">
-      <div class="popup__container">
-        <img class="popup__close" src="./images/CloseIcon.png" alt="Закрыть">
+      <form class="popup__container">
+        <button type="button" class="popup__close" aria-label="Закрыть"></button>
         <h2 class="popup__form">Редактировать профиль</h2>
-        <div class="popup__field">
-          <p class="popup__text">Жак-Ив Кусто</p>
-        </div>
-        <div class="popup__field">
-          <p class="popup__text">Исследователь океана</p>
-        </div>
-        <div class="popup__button">
-          <p class="popup__text">Сохранить</p>
-        </div>
-      </div>
+          <input type="text" class="popup__text" value="Жак-Ив Кусто">
+          <input type="text" class="popup__text" value="Исследователь океана">
+        <button type="submit" class="popup__button" aria-label="Сохранить">Сохранить</button>
+      </form>
     </div>
     <header class="header">
-      <img class="header__logo" src="./images/logo.png" alt="Место">
+      <img class="header__logo" src="./images/Logo.svg" alt="Место">
     </header>
-    <section class="profile">
-      <div class="profile__image">
-        <img class="profile__avatar" src="./images/kusto.jpg" alt="Кусто">
-      </div>
-      <div class="profile__info">
-        <h1 class="profile__title">Жак-Ив Кусто</h1>
-        <p class="profile__subtitle">Исследователь океана</p>
-        <div class="profile__edit">
-          <img class="profile__img" src="./images/pen.png" alt="Ручка">
+    <main>
+      <section class="profile">
+          <img class="profile__avatar" src="./images/kusto.jpg" alt="Кусто">
+        <div class="profile__info">
+          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <p class="profile__subtitle">Исследователь океана</p>
+          <button type="button" class="profile__edit" aria-label="Редактировать"></button>
         </div>
-      </div>
-      <div class="profile__add">
-        <img class="profile__plus" src="./images/plus.png" alt="Плюс">
-      </div>
-    </section>
-    <section class="elements">
-      <div class="element">
-        <img class="element__img" src="./images/karachaevsk.jpg" alt="Карачаевск">
-        <div class="element__info">
-          <h2 class="element__title">Карачаево-Черкессия</h2>
-          <div class="element__heart"></div>
+        <button type="button" class="profile__add" aria-label="Добавить"></button>
+      </section>
+      <section class="elements">
+        <div class="element">
+          <img class="element__img" src="./images/karachaevsk.jpg" alt="Карачаевск">
+          <div class="element__info">
+            <h2 class="element__title">Карачаево-Черкессия</h2>
+            <button class="element__heart" aria-label="Нравится"></button>
+          </div>
         </div>
-      </div>
-      <div class="element">
-        <img class="element__img" src="./images/elbrus.png" alt="Гора Эльбрус">
-        <div class="element__info">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <div class="element__heart"></div>
+        <div class="element">
+          <img class="element__img" src="./images/elbrus.png" alt="Гора Эльбрус">
+          <div class="element__info">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button class="element__heart" aria-label="Нравится"></button>
+          </div>
         </div>
-      </div>
-      <div class="element">
-        <img class="element__img" src="./images/dombaj.png" alt="Домбай">
-        <div class="element__info">
-          <h2 class="element__title">Домбай</h2>
-          <div class="element__heart"></div>
+        <div class="element">
+          <img class="element__img" src="./images/dombaj.png" alt="Домбай">
+          <div class="element__info">
+            <h2 class="element__title">Домбай</h2>
+            <button class="element__heart" aria-label="Нравится"></button>
+          </div>
         </div>
-      </div>
-      <div class="element">
-        <img class="element__img" src="./images/baltiysk.jpg" alt="Балтийск">
-        <div class="element__info">
-          <h2 class="element__title">Балтийск</h2>
-          <div class="element__heart"></div>
+        <div class="element">
+          <img class="element__img" src="./images/baltiysk.jpg" alt="Балтийск">
+          <div class="element__info">
+            <h2 class="element__title">Балтийск</h2>
+            <button class="element__heart" aria-label="Нравится"></button>
+          </div>
         </div>
-      </div>
-      <div class="element">
-        <img class="element__img" src="./images/altaj.jpg" alt="Алтай">
-        <div class="element__info">
-          <h2 class="element__title">Алтай</h2>
-          <div class="element__heart"></div>
+        <div class="element">
+          <img class="element__img" src="./images/altaj.jpg" alt="Алтай">
+          <div class="element__info">
+            <h2 class="element__title">Алтай</h2>
+            <button class="element__heart" aria-label="Нравится"></button>
+          </div>
         </div>
-      </div>
-      <div class="element">
-        <img class="element__img" src="./images/kareliya.jpg" alt="Карелия">
-        <div class="element__info">
-          <h2 class="element__title">Карелия</h2>
-          <div class="element__heart"></div>
+        <div class="element">
+          <img class="element__img" src="./images/kareliya.jpg" alt="Карелия">
+          <div class="element__info">
+            <h2 class="element__title">Карелия</h2>
+            <button class="element__heart" aria-label="Нравится"></button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
     <footer class="footer">
       <p class="footer__text">© 2020 Mesto Russia</p>
     </footer>

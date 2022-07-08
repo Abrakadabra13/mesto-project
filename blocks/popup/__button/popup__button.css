@@ -12,12 +12,12 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  bottom: 37px;
   border-radius: 2px;
+  align-self: flex-end;
+  cursor: pointer;
 }
 
-@media (min-width: 320px) and (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 600px) {
   .popup__button {
     max-width: 238px;
     height: 46px;

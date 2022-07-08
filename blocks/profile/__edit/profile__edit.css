@@ -1,8 +1,15 @@
 .profile__edit {
+  padding: 0;
+  border: none;
+  background-image: url(/images/pen.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0);
   grid-area: rename;
   border: solid 1px #FFFFFF;
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 
 @media (min-width: 320px) and (max-width: 425px) {

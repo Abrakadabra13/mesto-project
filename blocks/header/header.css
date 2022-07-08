@@ -5,7 +5,7 @@
   max-width: 880px;
   border-bottom: 1px;
   border-bottom-style: solid;
-  border-color: #545454;
+  border-color: rgba(84, 84, 84, 0.7);
 }
 
 @media (min-width: 320px) and (max-width: 424px) {
