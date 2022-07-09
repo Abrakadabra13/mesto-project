@@ -1,0 +1,16 @@
+.popup__exit {
+  width: 32px;
+  height: 32px;
+  position: fixed;
+  top: calc(50% - 205px);
+  right: calc(50% - 255px);
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .popup__exit {
+    width: 20px;
+    height: 20px;
+    left: calc(50% + 121px);
+    top: calc(50% - 125px);
+  }
+}
