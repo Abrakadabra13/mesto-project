@@ -2,9 +2,7 @@
   display: grid;
   padding-top: 22px;
   padding-bottom: 25px;
-  /* padding-right: 244px; */
   max-width: 580px;
-  /* align-self: stretch; */
   grid-template-columns: 320px 1fr;
   grid-template-rows: 2fr;
   grid-template-areas:
