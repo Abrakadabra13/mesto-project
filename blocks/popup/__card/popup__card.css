@@ -1,5 +1,4 @@
-.popup {
-  /* display: none; */
+.popup__card {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.8s, opacity 0.8s ease-out;
@@ -7,7 +6,7 @@
   z-index: 5;
 }
 
-.popup::before {
+.popup__card::before {
   content: "";
   position: fixed;
   top: 0;

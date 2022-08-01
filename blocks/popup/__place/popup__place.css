@@ -1,0 +1,16 @@
+.popup__place {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  color: black;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29.05px;
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .popup__place {
+    font-size: 18px;
+    line-height: 21.78px;
+  }
+}
+
