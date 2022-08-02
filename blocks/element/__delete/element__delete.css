@@ -1,7 +1,7 @@
 .element__delete {
   padding: 0;
   border: none;
-  background-image: url(/images/Trash.svg);
+  background-image: url(./images/Trash.svg);
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0);
   width: 18px;
