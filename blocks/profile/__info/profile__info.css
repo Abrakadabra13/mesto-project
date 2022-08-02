@@ -11,14 +11,9 @@
   align-items: baseline;
 }
 
-@media (min-width: 426px) and (max-width: 1024px) {
+@media (min-width: 320px) and (max-width: 900px) {
   .profile__info {
-    grid-area: info;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 425px) {
-  .profile__info {
+    justify-content: center;
     grid-area: info;
     padding-bottom: 36px;
     grid-template-columns: 199px 1fr;

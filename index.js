@@ -1,27 +1,26 @@
 const popup = document.querySelector('.popup');
+const popupProfile = document.querySelector('.popup__profile');
 const popupCard = document.querySelector('.popup__card');
-const popupClose = document.querySelectorAll('.popup__close');
+const popupsClose = document.querySelectorAll('.popup__close');
 const popupEdit = document.querySelector('.profile__edit');
 const popupAddCard = document.querySelector('.profile__add');
-const formElement = document.querySelectorAll('.popup__container');
+const popupImg = document.querySelector('.popup__img');
+const popupImage = document.querySelector('.popup__image');
+const popupTitle = document.querySelector('.popup__title');
+const formElementProfile = document.querySelector('.popup__container_profile');
+const formElementCard = document.querySelector('.popup__container_card');
 const nameInput = document.querySelector('.popup__name');
 const jobInput = document.querySelector('.popup__job');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const elements = Array.from(document.querySelectorAll('.element'));
-const popupText = document.querySelectorAll('.popup__text');
-const popupTextCard = document.querySelectorAll('.popup__text_card');
 const cardName = document.querySelector('.popup__namecard');
 const cardLink = document.querySelector('.popup__link');
-const like = document.querySelectorAll('.element__heart');
-const del = document.querySelectorAll('.element__delete');
-const elementImg = document.querySelectorAll('.element__img');
-const elementTitle = document.querySelector('.element__title');
-const popupImg = document.querySelector('.popup__img');
-const popupImage = document.querySelector('.popup__image');
-const popupTitle = document.querySelector('.popup__title')
+const likes = document.querySelectorAll('.element__heart');
+const container = document.querySelector('.elements');
+const cardTemplate = document.querySelector('#element').content;
 
-const initialCards = [
+const cards = [
   {
     name: 'Карачаево-Черкессия',
     link: './images/karachaevsk.jpg'
@@ -48,110 +47,85 @@ const initialCards = [
   }
   ];
 
-function closePopup(el) {
- el.classList.remove('popup_opened')
+function createCard(name, link) {
+  const card = cardTemplate.querySelector('.element').cloneNode(true);
+  const elementsImg = card.querySelector('.element__img');
+  const elementsTitle = card.querySelector('.element__title');
+  elementsImg.src = link;
+  elementsImg.alt = name;
+  elementsTitle.textContent = name;
+  elementsImg.addEventListener('click', openImg);
+  const likes = card.querySelector('.element__heart');
+  likes.addEventListener('click', clickLike);
+  const exits = card.querySelector('.element__delete');
+  exits.addEventListener('click', deleteCard);
+  return card;
 }
 
-function openPopup(el) {
-  el.classList.add('popup_opened')
+function renderCard(container, card) {
+  container.prepend(card)
 }
 
-popupClose.forEach((item) =>
+cards.forEach((item) =>
+  renderCard(container, createCard(item.name, item.link))
+);
+
+function closePopup(element) {
+  element.classList.remove('popup_opened')
+}
+
+function openPopup(element) {
+  element.classList.add('popup_opened')
+}
+
+popupsClose.forEach((item) =>
   item.addEventListener('click', (evt) =>
     closePopup(evt.target.closest('.popup'))
   ));
 
 popupEdit.addEventListener('click', function() {
-  openPopup(popup);
+  openPopup(popupProfile);
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
 });
 
-popupText[0].addEventListener('click', function() {
-  popupText[0].value = '';
-});
-
-popupText[1].addEventListener('click', function() {
-  popupText[1].value = '';
-});
-
 popupAddCard.addEventListener('click', function() {
   openPopup(popupCard);
-  cardName.value = 'Название';
-  cardLink.value = 'Ссылка на картинку'
-});
-
-popupTextCard[0].addEventListener('click', function() {
-  popupTextCard[0].value = '';
-});
-
-popupTextCard[1].addEventListener('click', function() {
-  popupTextCard[1].value = '';
+  cardName.value = '';
+  cardLink.value = ''
 });
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
-  closePopup(popup)
+  closePopup(popupProfile)
 };
 
-formElement[0].addEventListener('submit', formSubmitHandler);
-
-function createCard() {
-  const elementCopy = elements[0].cloneNode(true);
-  const elTitle = elementCopy.querySelector('.element__title');
-  elTitle.textContent = cardName.value;
-  const elLink = elementCopy.querySelector('.element__img');
-  elLink.src = cardLink.value;
-  elLink.alt = cardName.value;
-  const el = document.querySelector('.elements');
-  const heart = elementCopy.querySelector('.element__heart');
-  heart.addEventListener('click', likeClick);
-  heart.classList.remove('element__heart_active');
-  el.prepend(elementCopy);
-  const de = elementCopy.querySelector('.element__delete');
-  de.addEventListener('click', delEl);
-  elementCopy.querySelector('.element__img').addEventListener('click', imgOpen);
-};
+formElementProfile.addEventListener('submit', formSubmitHandler);
 
 function addCard(evt) {
   evt.preventDefault();
-  createCard();
+  renderCard(container, createCard(cardName.value, cardLink.value))
   closePopup(popupCard)
 };
 
-formElement[1].addEventListener('submit', addCard);
+formElementCard.addEventListener('submit', addCard);
 
-function likeClick(evt) {
-  this.classList.toggle('element__heart_active')
+function openImg(evt) {
+  openPopup(popupImg);
+  popupImage.src = evt.target.src;
+  popupTitle.textContent = evt.target.alt;
+  popupImage.alt = evt.target.alt;
 }
 
-like.forEach((button) => {
-  button.addEventListener('click', likeClick)
-});
-
-function delEl(evt) {
+function deleteCard(evt) {
   evt.target.parentElement.remove()
 }
 
-del.forEach((button) => {
-  button.addEventListener('click', delEl)
-});
-
-function imgOpen(evt) {
-  openPopup(popupImg);
-  popupImage.src = this.src;
-  popupImage.alt = this.alt;
-  popupTitle.textContent = this.alt;
+function clickLike(evt) {
+  evt.target.classList.toggle('element__heart_active')
 }
-
-elementImg.forEach((img) => {
-  img.addEventListener('click', imgOpen)
-});
-
-
-
 
 
 

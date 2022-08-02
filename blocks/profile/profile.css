@@ -5,31 +5,14 @@
   grid-template-rows: 2fr;
   align-items: center;
   width: 100%;
-  max-width: 880px;
+  min-width: 882px;
   padding-top: 36.25px;
   padding-bottom: 47.25px;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 320px) and (max-width: 900px) {
   .profile {
-    grid-template-areas:
-    "image info add";
-  }
-}
-
-@media (min-width: 426px) and (max-width: 768px) {
-  .profile {
-    grid-template-columns: 1fr;
-    grid-template-rows: 4fr;
-    grid-template-areas:
-    "image"
-    "info"
-    "add";
-  }
-}
-
-@media (min-width: 320px) and (max-width: 425px) {
-  .profile {
+    min-width: 240px;
     grid-template-columns: 1fr;
     grid-template-rows: 3fr;
     grid-template-areas:

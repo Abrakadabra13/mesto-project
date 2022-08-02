@@ -1,8 +1,9 @@
 .elements {
   width: 100%;
   max-width: 880px;
+  min-height: 762px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px 17px;
@@ -13,3 +14,5 @@
     width: 120%;
   }
 }
+
+

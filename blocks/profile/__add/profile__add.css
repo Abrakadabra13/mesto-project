@@ -14,13 +14,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 426px) and (max-width: 1024px) {
-  .profile__add {
-    grid-area: add;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 900px) {
   .profile__add {
     grid-area: add;
     width: 282px;
