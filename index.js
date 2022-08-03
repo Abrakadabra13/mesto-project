@@ -1,4 +1,3 @@
-const popup = document.querySelector('.popup');
 const popupProfile = document.querySelector('.popup__profile');
 const popupCard = document.querySelector('.popup__card');
 const popupsClose = document.querySelectorAll('.popup__close');
@@ -13,10 +12,8 @@ const nameInput = document.querySelector('.popup__name');
 const jobInput = document.querySelector('.popup__job');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
-const elements = Array.from(document.querySelectorAll('.element'));
 const cardName = document.querySelector('.popup__namecard');
 const cardLink = document.querySelector('.popup__link');
-const likes = document.querySelectorAll('.element__heart');
 const container = document.querySelector('.elements');
 const cardTemplate = document.querySelector('#element').content;
 
@@ -55,10 +52,10 @@ function createCard(name, link) {
   elementsImg.alt = name;
   elementsTitle.textContent = name;
   elementsImg.addEventListener('click', openImg);
-  const likes = card.querySelector('.element__heart');
-  likes.addEventListener('click', clickLike);
-  const exits = card.querySelector('.element__delete');
-  exits.addEventListener('click', deleteCard);
+  const like = card.querySelector('.element__heart');
+  like.addEventListener('click', clickLike);
+  const exit = card.querySelector('.element__delete');
+  exit.addEventListener('click', deleteCard);
   return card;
 }
 
@@ -95,14 +92,14 @@ popupAddCard.addEventListener('click', function() {
   cardLink.value = ''
 });
 
-function formSubmitHandler(evt) {
+function saveProfilePopup(evt) {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
   closePopup(popupProfile)
 };
 
-formElementProfile.addEventListener('submit', formSubmitHandler);
+formElementProfile.addEventListener('submit', saveProfilePopup);
 
 function addCard(evt) {
   evt.preventDefault();
@@ -120,7 +117,7 @@ function openImg(evt) {
 }
 
 function deleteCard(evt) {
-  evt.target.parentElement.remove()
+  evt.target.closest('.element').remove()
 }
 
 function clickLike(evt) {

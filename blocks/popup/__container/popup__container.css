@@ -7,7 +7,7 @@
   min-height: 330px;
   position: fixed;
   left: calc(50% - 215px);
-  top: calc(50% - 165px);
+  top: calc(50% - 161px);
   padding: 34px 36px 37px 36px;
   border-radius: 10px;
   display: grid;
@@ -19,7 +19,6 @@
     width: 282px;
     min-height: 322px;
     left: calc(50% - 141px);
-    top: calc(50% - 82.5px);
     padding: 25px 22px 25px 22px;
     grid-template-rows: 22px 102px 57px 91px;
   }
