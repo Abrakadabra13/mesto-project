@@ -10,7 +10,7 @@
   .popup__exit {
     width: 20px;
     height: 20px;
-    left: calc(50% + 121px);
+    left: calc(50% + 120px);
     top: calc(50% - 197px);
   }
 }
