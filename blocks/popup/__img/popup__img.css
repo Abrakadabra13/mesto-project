@@ -1,14 +1,22 @@
 .popup__img {
-  max-width:75vw;
-  max-height: 75vh;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.8s, opacity 0.8s ease-out;
   position: fixed;
   z-index: 5;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  max-width: 100vh;
+  height: 100%;
 }
 
-
+.popup__img::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width:100vw;
+  max-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: -1;
+}

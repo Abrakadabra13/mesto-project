@@ -5,7 +5,6 @@ const popupEdit = document.querySelector('.profile__edit');
 const popupAddCard = document.querySelector('.profile__add');
 const popupImg = document.querySelector('.popup__img');
 const popupImage = document.querySelector('.popup__image');
-const popupBackground = document.querySelector('.popup__container_image');
 const popupTitle = document.querySelector('.popup__title');
 const formElementProfile = document.querySelector('.popup__container_profile');
 const formElementCard = document.querySelector('.popup__container_card');
@@ -25,11 +24,11 @@ const cards = [
   },
   {
     name: 'Гора Эльбрус',
-    link: './images/elbrus.png'
+    link: './images/elbrus.jpg'
   },
   {
     name: 'Домбай',
-    link: './images/dombaj.png'
+    link: './images/dombaj.jpg'
   },
   {
     name: 'Балтийск',
@@ -78,7 +77,6 @@ function openPopup(element) {
 
 popupsClose.forEach((item) =>
   item.addEventListener('click', function(evt) {
-  popupBackground.classList.remove('popup__container_image_active');
     closePopup(evt.target.closest('.popup'));
   }
   ));
@@ -115,7 +113,6 @@ formElementCard.addEventListener('submit', addCard);
 function openImg(evt) {
   openPopup(popupImg);
   const popupBackground = document.querySelector('.popup__container_image');
-  popupBackground.classList.add('popup__container_image_active');
   popupImage.src = evt.target.src;
   popupTitle.textContent = evt.target.alt;
   popupImage.alt = evt.target.alt;

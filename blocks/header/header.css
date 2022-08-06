@@ -1,4 +1,5 @@
 .header {
+  padding-top: 45px;
   display: flex;
   align-items: flex-start;
   width: 100%;
@@ -10,6 +11,7 @@
 
 @media (min-width: 320px) and (max-width: 424px) {
   .header {
+    padding-top: 28px;
     margin-left: -19px;
     margin-right: -19px;
     max-width: 320px;
