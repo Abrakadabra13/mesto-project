@@ -4,7 +4,7 @@
   transition: visibility 0.8s, opacity 0.8s ease-out;
   position: fixed;
   z-index: 5;
-  max-width: 100vh;
+  max-height: 100vh;
   height: 100%;
 }
 
