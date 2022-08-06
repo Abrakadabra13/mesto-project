@@ -112,7 +112,6 @@ formElementCard.addEventListener('submit', addCard);
 
 function openImg(evt) {
   openPopup(popupImg);
-  const popupBackground = document.querySelector('.popup__container_image');
   popupImage.src = evt.target.src;
   popupTitle.textContent = evt.target.alt;
   popupImage.alt = evt.target.alt;
