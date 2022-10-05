@@ -42,3 +42,4 @@
 @import url(./blocks/popup/__job/_error/popup__job_error.css);
 @import url(./blocks/popup/__namecard/_error/popup__namecard_error.css);
 @import url(./blocks/popup/__button/_inactive/popup__button_inactive.css);
+@import url(./blocks/popup/__label/popup__label.css);

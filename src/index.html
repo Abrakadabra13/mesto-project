@@ -43,12 +43,16 @@
       </div>
       <form class="popup__container popup__container_profile" name="form" novalidate>
         <h2 class="popup__form">Редактировать профиль</h2>
-          <input id="popup__name" type="text" name="title" class="popup__text popup__name" value="Жак-Ив Кусто" minlength="2" maxlength="40"
+          <div class="popup__label">
+            <input id="popup__name" type="text" name="title" class="popup__text popup__name" value="Жак-Ив Кусто" minlength="2" maxlength="40"
           pattern="^[а-яА-ЯёЁa-zA-Z\-\s]+$" data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы" required>
-          <span class="popup__text_error popup__name_error">Вы пропустили это поле.</span>
+            <span class="popup__text_error popup__name_error">Вы пропустили это поле.</span>
+          </div>
+          <div class="popup__label">
           <input id="popup__job" type="text" name="subtitle" class="popup__text popup__job" value="Исследователь океана" minlength="2" maxlength="200"
           pattern="^[а-яА-ЯёЁa-zA-Z\-\s]+$" data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы" required>
           <span class="popup__text_error popup__job_error">Вы пропустили это поле.</span>
+        </div>
         <button type="submit" class="popup__button popup__button_inactive" aria-label="Сохранить">Сохранить</button>
       </form>
     </section>
@@ -58,11 +62,15 @@
       </div>
       <form class="popup__container popup__container_card" name="form" novalidate>
         <h2 class="popup__place">Новое место</h2>
+        <div class="popup__label">
           <input id="popup__namecard" type="text" name="title" class="popup__text_card popup__text popup__namecard" value="" placeholder="Название" minlength="2" maxlength="30"
           pattern="^[а-яА-ЯёЁa-zA-Z\-\s]+$" data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы" required>
           <span class="popup__text_error popup__namecard_error">Вы пропустили это поле.</span>
+        </div>
+        <div class="popup__label">
           <input id="popup__link" type="url" name="subtitle" class="popup__text_card popup__text popup__link" value="" placeholder="Ссылка на картинку" required>
           <span class="popup__text_error popup__link_error">Введите адрес сайта.</span>
+        </div>
         <button type="submit" class="popup__button popup__button_inactive" aria-label="Сохранить">Сохранить</button>
       </form>
     </section>
