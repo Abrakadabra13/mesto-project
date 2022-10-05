@@ -1,14 +1,12 @@
 .popup__text_card {
   /* padding-bottom: 13.3px; */
   border: none;
+  border-bottom: 1px solid rgba(0,0,0,.2);
   font-family: 'Inter', Arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 16.94px;
   max-width: 358px;
-  border-bottom: 1px;
-  border-bottom-style: solid;
-  border-color: rgba(0,0,0,0.2);
   align-self: flex-end;
   }
 

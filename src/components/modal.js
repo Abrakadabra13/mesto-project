@@ -8,16 +8,6 @@ export const popupProfile = document.querySelector('.popup__profile');
 import { nameInput, jobInput, popupTitle } from './index.js'
 import { closePopup, openPopup } from './utils.js'
 
-// export function closePopup(element) {
-//   element.classList.remove('popup_opened');
-//   removeEsc();
-// };
-
-// export function openPopup(element) {
-//   element.classList.add('popup_opened');
-//   closeEsc();
-// };
-
 
 export function closeButtonError() {
   const button = formElementCard.querySelector('.popup__button');

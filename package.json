@@ -15,6 +15,7 @@
     "clone-deep": "^4.0.1",
     "colorette": "^2.0.19",
     "commander": "^2.20.3",
+    "core-js": "^3.25.5",
     "cross-spawn": "^7.0.3",
     "electron-to-chromium": "^1.4.261",
     "enhanced-resolve": "^5.10.0",
@@ -41,6 +42,7 @@
     "isexe": "^2.0.0",
     "isobject": "^3.0.1",
     "jest-worker": "^27.5.1",
+    "jquery": "^3.6.1",
     "json-parse-even-better-errors": "^2.3.1",
     "json-schema-traverse": "^0.4.1",
     "kind-of": "^6.0.3",
@@ -87,12 +89,22 @@
     "wildcard": "^2.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
+    "autoprefixer": "^10.4.12",
+    "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.1.13",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss-loader": "^7.0.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
-    "build": "rd /s /q dist && webpack --mode production",
+    "build": "webpack --mode production",
     "dev": "webpack serve"
   },
   "author": "",

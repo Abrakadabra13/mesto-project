@@ -17,7 +17,8 @@ module.exports = {
     static: path.resolve(__dirname, './dist'),
     open: true,
     compress: true,
-    port: 8080
+    port: 8080,
+    open: true
   },
   module: {
     rules: [{
@@ -27,7 +28,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
-        type: 'asset/resource',
+        type: 'asset/resource'
       },
       {
         test: /\.css$/,

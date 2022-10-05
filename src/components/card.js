@@ -7,32 +7,21 @@ import { openImg } from './modal.js';
 import { closePopup } from './utils.js';
 import { popupCard } from './index.js';
 
- const cards = [
-  {
-    name: 'Карачаево-Черкессия',
-    link: './images/karachaevsk.jpg'
-  },
-  {
-    name: 'Гора Эльбрус',
-    link: './images/elbrus.jpg'
-  },
-  {
-    name: 'Домбай',
-    link: './images/dombaj.jpg'
-  },
-  {
-    name: 'Балтийск',
-    link: './images/baltiysk.jpg'
-  },
-  {
-    name: 'Алтай',
-    link: './images/altaj.jpg'
-  },
-  {
-    name: 'Карелия',
-    link: './images/kareliya.jpg'
-  }
-  ];
+const elbrus = new URL('../images/elbrus.jpg', import.meta.url);
+const dombaj = new URL('../images/dombaj.jpg', import.meta.url);
+const baltiysk = new URL('../images/baltiysk.jpg', import.meta.url);
+const altaj = new URL('../images/altaj.jpg', import.meta.url);
+const kareliya = new URL('../images/kareliya.jpg', import.meta.url);
+const karachaevо = new URL('../images/karachaevo-cherkes.jpg', import.meta.url);
+
+const cards = [
+  { name: 'Гора Эльбрус', link: elbrus },
+  { name: 'Домбай', link: dombaj },
+  { name: 'Балтийск', link: baltiysk },
+  { name: 'Алтай', link: altaj },
+  { name: 'Карелия', link: kareliya },
+  { name: 'Карачаево-Черкессия', link: karachaevо },
+];
 
 export function createCard(name, link) {
   const card = cardTemplate.querySelector('.element').cloneNode(true);
