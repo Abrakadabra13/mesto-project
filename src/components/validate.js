@@ -1,4 +1,11 @@
-import { formInput, formElement } from './variables.js';
+import { formInput, formElement, formElementCard } from './variables.js';
+
+export const hideInputError = (formElement, formInput) => {
+  const formError = formElement.querySelector(`.${formInput.id}_error`);
+
+  formError.style.display = 'none';
+  formError.textContent = '';
+};
 
 const isValid = (formElement, formInput) => {
   if (formInput.validity.patternMismatch) {
@@ -20,14 +27,6 @@ const showInputError = (formElement, formInput, errorMessage) => {
   formError.textContent = errorMessage;
 };
 
-const hideInputError = (formElement, formInput) => {
-  const formError = formElement.querySelector(`.${formInput.id}_error`);
-
-  formError.style.display = 'none';
-  formError.textContent = '';
-};
-
-
 const hasInvalidInput = (inputList) => {
   return inputList.some((formInput) => {
     return !formInput.validity.valid;
@@ -44,9 +43,18 @@ const toggleButtonState = (inputList, buttonElement) => {
   }
 };
 
+export const validation = {
+  formInput: '.popup__container',
+  inputSelector: '.popup__text',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_inactive',
+  inputErrorClass: 'popup__text_error',
+  popupForm: '.popup__container'
+};
+
 const setEventListeners = (formElement) => {
-  const inputList = Array.from(formElement.querySelectorAll('.popup__text'));
-  const buttonElement = formElement.querySelector('.popup__button');
+  const inputList = Array.from(formElement.querySelectorAll(validation.inputSelector));
+  const buttonElement = formElement.querySelector(validation.submitButtonSelector);
   buttonElement.disabled = true;
   inputList.forEach((formInput) => {
     formInput.addEventListener('input', () => {
@@ -56,11 +64,22 @@ const setEventListeners = (formElement) => {
   });
 };
 
+
 export const enableValidation = () => {
-  const formList = Array.from(document.querySelectorAll('.popup__container'));
+  const formList = Array.from(document.querySelectorAll(validation.popupForm));
   formList.forEach((formElement) => {
     setEventListeners(formElement);
   });
 };
+
+export function closeButtonError() {
+  const button = formElementCard.querySelector(validation.submitButtonSelector);
+  button.disabled = true;
+  button.classList.add('popup__button_inactive');
+  const formError = document.querySelectorAll(validation.inputErrorClass);
+  formError.forEach((item) => {
+    item.style.display = 'none';
+  })
+}
 
 
