@@ -1,5 +1,4 @@
-export const formElement = document.querySelector('.popup__container')
-export const formInput = document.querySelector('.popup__text')
+import { formInput, formElement } from './variables.js';
 
 const isValid = (formElement, formInput) => {
   if (formInput.validity.patternMismatch) {

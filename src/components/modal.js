@@ -1,13 +1,5 @@
-export const formElementCard = document.querySelector('.popup__container_card');
-export const profileTitle = document.querySelector('.profile__title');
-export const profileSubtitle = document.querySelector('.profile__subtitle');
-export const popupImage = document.querySelector('.popup__image');
-export const popupImg = document.querySelector('.popup__img');
-export const popupProfile = document.querySelector('.popup__profile');
-
-import { nameInput, jobInput, popupTitle } from './index.js'
-import { closePopup, openPopup } from './utils.js'
-
+import { closePopup, openPopup } from './utils.js';
+import { formElementCard, profileTitle, profileSubtitle, popupTitle, popupImage, popupImg, popupProfile } from './variables.js';
 
 export function closeButtonError() {
   const button = formElementCard.querySelector('.popup__button');

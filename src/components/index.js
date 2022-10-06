@@ -1,18 +1,9 @@
 import '../index.css';
-import { cardName, cardLink, addCard } from './card.js';
+import { addCard } from './card.js';
 import { saveProfilePopup, closeButtonError, formElementCard, popupProfile, profileTitle, profileSubtitle } from './modal.js';
 import { enableValidation } from './validate.js';
 import { closePopup, openPopup } from './utils.js';
-
-export const popupCard = document.querySelector('.popup__card');
-export const popupsClose = document.querySelectorAll('.popup__close');
-export const popupEdit = document.querySelector('.profile__edit');
-export const popupAddCard = document.querySelector('.profile__add');
-export const popupTitle = document.querySelector('.popup__title');
-export const formElementProfile = document.querySelector('.popup__container_profile');
-export const nameInput = document.querySelector('.popup__name');
-export const jobInput = document.querySelector('.popup__job');
-
+import { formElementCard, profileTitle, profileSubtitle, cardName, cardLink, popupCard, popupsClose, popupEdit, popupAddCard, formElementProfile, nameInput, jobInput } from './variables.js';
 
 export function closeEsc () {
   document.querySelector('body').addEventListener('keydown', function (evt) {

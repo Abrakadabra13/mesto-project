@@ -1,11 +1,6 @@
-export const cardName = document.querySelector('.popup__namecard');
-export const cardLink = document.querySelector('.popup__link');
-export const container = document.querySelector('.elements');
-export const cardTemplate = document.querySelector('#element').content;
-
 import { openImg } from './modal.js';
 import { closePopup } from './utils.js';
-import { popupCard } from './index.js';
+import { cardName, cardLink, container, cardTemplate, popupCard } from './variables.js';
 
 const elbrus = new URL('../images/elbrus.jpg', import.meta.url);
 const dombaj = new URL('../images/dombaj.jpg', import.meta.url);
