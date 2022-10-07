@@ -1,4 +1,4 @@
-import { openImg } from './modal.js';
+import { openImg } from './index.js';
 
 import { cardTemplate } from './variables.js';
 

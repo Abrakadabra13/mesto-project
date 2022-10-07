@@ -1,7 +1,7 @@
 import '../index.css';
 import { enableValidation, closeButtonError } from './validate.js';
-import { closePopup, openPopup, saveProfilePopup } from './modal.js';
-import { cards, container, formElementCard, profileTitle, profileSubtitle, popupProfile, cardName, cardLink, popupCard, popupsClose, popupEdit, popupAddCard, formElementProfile, nameInput, jobInput } from './variables.js';
+import { closePopup, openPopup } from './modal.js';
+import { popupTitle, popupImage, popupImg, cards, container, formElementCard, profileTitle, profileSubtitle, popupProfile, cardName, cardLink, popupCard, popupsClose, popupEdit, popupAddCard, formElementProfile, nameInput, jobInput } from './variables.js';
 import { createCard } from './card.js';
 
 
@@ -31,13 +31,13 @@ formElementCard.addEventListener('submit', addCard);
 
 enableValidation();
 
-// document.querySelector('body').addEventListener('click', function (evt) {
-//   if (!evt.target.classList.contains('popup__container')) {
-//     document.querySelectorAll('.popup').forEach(() => {
-//       closePopup(evt.target);
-//     })
-//   }
-// });
+
+export function saveProfilePopup(evt) {
+  evt.preventDefault();
+  profileTitle.textContent = nameInput.value;
+  profileSubtitle.textContent = jobInput.value;
+  closePopup(popupProfile)
+};
 
 function renderCard(container, card) {
   container.prepend(card)
@@ -54,5 +54,11 @@ export function addCard(evt) {
 };
 
 
+export function openImg(evt) {
+  popupImage.src = evt.target.src;
+  popupTitle.textContent = evt.target.alt;
+  popupImage.alt = evt.target.alt;
+  openPopup(popupImg);
+};
 
 
