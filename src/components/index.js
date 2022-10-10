@@ -4,7 +4,6 @@ import { closePopup, openPopup } from './modal.js';
 import { popupTitle, popupImage, popupImg, cards, container, formElementCard, profileTitle, profileSubtitle, popupProfile, cardName, cardLink, popupCard, popupsClose, popupEdit, popupAddCard, formElementProfile, nameInput, jobInput } from './variables.js';
 import { createCard } from './card.js';
 
-
 popupsClose.forEach((item) =>
   item.addEventListener('click', function(evt) {
     closePopup(evt.target.closest('.popup'));
@@ -60,5 +59,4 @@ export function openImg(evt) {
   popupImage.alt = evt.target.alt;
   openPopup(popupImg);
 };
-
 
