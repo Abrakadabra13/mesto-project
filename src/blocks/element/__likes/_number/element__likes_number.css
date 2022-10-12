@@ -1,0 +1,9 @@
+.element__likes_number {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000000;
+  visibility: visible;
+}

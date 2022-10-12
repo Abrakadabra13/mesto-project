@@ -3,21 +3,21 @@ export const cardName = document.querySelector('.popup__namecard');
 export const cardLink = document.querySelector('.popup__link');
 export const container = document.querySelector('.elements');
 export const cardTemplate = document.querySelector('#element').content;
-const elbrus = new URL('../images/elbrus.jpg', import.meta.url);
-const dombaj = new URL('../images/dombaj.jpg', import.meta.url);
-const baltiysk = new URL('../images/baltiysk.jpg', import.meta.url);
-const altaj = new URL('../images/altaj.jpg', import.meta.url);
-const kareliya = new URL('../images/kareliya.jpg', import.meta.url);
-const karachaevо = new URL('../images/karachaevo-cherkes.jpg', import.meta.url);
+// const elbrus = new URL('../images/elbrus.jpg', import.meta.url);
+// const dombaj = new URL('../images/dombaj.jpg', import.meta.url);
+// const baltiysk = new URL('../images/baltiysk.jpg', import.meta.url);
+// const altaj = new URL('../images/altaj.jpg', import.meta.url);
+// const kareliya = new URL('../images/kareliya.jpg', import.meta.url);
+// const karachaevо = new URL('../images/karachaevo-cherkes.jpg', import.meta.url);
 
-export const cards = [
-  { name: 'Гора Эльбрус', link: elbrus },
-  { name: 'Домбай', link: dombaj },
-  { name: 'Балтийск', link: baltiysk },
-  { name: 'Алтай', link: altaj },
-  { name: 'Карелия', link: kareliya },
-  { name: 'Карачаево-Черкессия', link: karachaevо },
-];
+// export const cards = [
+//   { name: 'Гора Эльбрус', link: elbrus },
+//   { name: 'Домбай', link: dombaj },
+//   { name: 'Балтийск', link: baltiysk },
+//   { name: 'Алтай', link: altaj },
+//   { name: 'Карелия', link: kareliya },
+//   { name: 'Карачаево-Черкессия', link: karachaevо },
+// ];
 
 //modal.js
 export const formElementCard = document.querySelector('.popup__container_card');
@@ -40,3 +40,11 @@ export const popupTitle = document.querySelector('.popup__title');
 export const formElementProfile = document.querySelector('.popup__container_profile');
 export const nameInput = document.querySelector('.popup__name');
 export const jobInput = document.querySelector('.popup__job');
+
+export const popupAvatar = document.querySelector('.popup__avatar');
+export const avatarImg = document.querySelector('.profile__avatar');
+export const avatarButton = document.querySelector('.profile__avatar_button');
+export const avatarInput = document.querySelector('.popup__text_avatar');
+export const formElementAvatar = document.querySelector('.popup__container_avatar');
+
+

@@ -1,0 +1,19 @@
+.popup__container_avatar {
+  min-height: 272px;
+  box-sizing: border-box;
+  margin: auto;
+  background-color: white;
+  z-index: 1;
+  width: 430px;
+  position: fixed;
+  padding: 34px 36px 37px 36px;
+  border-radius: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .popup__container_avatar {
+    width: 282px;
+    min-height: 250px;
+    padding: 25px 22px 25px 22px;
+  }
+}

@@ -40,6 +40,15 @@
 @import url(./blocks/popup/__link/_error/popup__link_error.css);
 @import url(./blocks/popup/__name/_error/popup__name_error.css);
 @import url(./blocks/popup/__job/_error/popup__job_error.css);
+@import url(./blocks/popup/__avatar/_error/popup__avatar_error.css);
 @import url(./blocks/popup/__namecard/_error/popup__namecard_error.css);
 @import url(./blocks/popup/__button/_inactive/popup__button_inactive.css);
 @import url(./blocks/popup/__label/popup__label.css);
+@import url(./blocks/popup/__avatar/popup__avatar.css);
+@import url(./blocks/popup/__container/_avatar/popup__container_avatar.css);
+@import url(./blocks/popup/__close/_avatar/popup__close_avatar.css);
+@import url(./blocks/profile/__avatar/_button/profile__avatar_button.css);
+@import url(./blocks/element/__likes/element__likes.css);
+@import url(./blocks/element/__likes/_number/element__likes_number.css);
+@import url(./blocks/element/__likes/_number/_hidden/element__likes_number_hidden.css);
+@import url(./blocks/profile/__button/profile__button.css);
