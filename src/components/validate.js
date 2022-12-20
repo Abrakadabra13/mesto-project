@@ -1,8 +1,5 @@
-import { formInput, formElement, formElementCard } from './variables.js';
-
 export const hideInputError = (formElement, formInput) => {
   const formError = formElement.querySelector(`.${formInput.id}_error`);
-
   formError.style.display = 'none';
   formError.textContent = '';
 };
@@ -52,6 +49,8 @@ export const validation = {
   popupForm: '.popup__container'
 };
 
+
+
 const setEventListeners = (formElement) => {
   const inputList = Array.from(formElement.querySelectorAll(validation.inputSelector));
   const buttonElement = formElement.querySelector(validation.submitButtonSelector);
@@ -65,7 +64,7 @@ const setEventListeners = (formElement) => {
 };
 
 
-export const enableValidation = () => {
+export const enableValidation = (formElement) => {
   const formList = Array.from(document.querySelectorAll(validation.popupForm));
   formList.forEach((formElement) => {
     setEventListeners(formElement);
@@ -73,13 +72,10 @@ export const enableValidation = () => {
 };
 
 export function closeButtonError() {
-  const button = formElementCard.querySelector(validation.submitButtonSelector);
+  const button = document.querySelector(validation.submitButtonSelector);
   button.disabled = true;
   button.classList.add('popup__button_inactive');
-  const formError = document.querySelectorAll(validation.inputErrorClass);
-  formError.forEach((item) => {
-    item.style.display = 'none';
-  })
-}
+};
+
 
 

@@ -4,8 +4,7 @@
   "description": "Mesto",
   "main": "index.js",
   "dependencies": {
-    "core-js": "^3.25.5",
-    "cssnano": "^5.1.13"
+    "core-js": "^3.25.5"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",

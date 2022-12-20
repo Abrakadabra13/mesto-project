@@ -3,21 +3,6 @@ export const cardName = document.querySelector('.popup__namecard');
 export const cardLink = document.querySelector('.popup__link');
 export const container = document.querySelector('.elements');
 export const cardTemplate = document.querySelector('#element').content;
-// const elbrus = new URL('../images/elbrus.jpg', import.meta.url);
-// const dombaj = new URL('../images/dombaj.jpg', import.meta.url);
-// const baltiysk = new URL('../images/baltiysk.jpg', import.meta.url);
-// const altaj = new URL('../images/altaj.jpg', import.meta.url);
-// const kareliya = new URL('../images/kareliya.jpg', import.meta.url);
-// const karachaevо = new URL('../images/karachaevo-cherkes.jpg', import.meta.url);
-
-// export const cards = [
-//   { name: 'Гора Эльбрус', link: elbrus },
-//   { name: 'Домбай', link: dombaj },
-//   { name: 'Балтийск', link: baltiysk },
-//   { name: 'Алтай', link: altaj },
-//   { name: 'Карелия', link: kareliya },
-//   { name: 'Карачаево-Черкессия', link: karachaevо },
-// ];
 
 //modal.js
 export const formElementCard = document.querySelector('.popup__container_card');
