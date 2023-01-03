@@ -1,3 +1,14 @@
+import { formElement } from "./variables";
+
+export const validation = {
+  formInput: '.popup__container',
+  inputSelector: '.popup__text',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_inactive',
+  inputErrorClass: 'popup__text_error',
+  popupForm: '.popup__container'
+};
+
 export const hideInputError = (formElement, formInput) => {
   const formError = formElement.querySelector(`.${formInput.id}_error`);
   formError.style.display = 'none';
@@ -33,23 +44,12 @@ const hasInvalidInput = (inputList) => {
 const toggleButtonState = (inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
     buttonElement.disabled = true;
-    buttonElement.classList.add('popup__button_inactive');
+    buttonElement.classList.add(validation.inactiveButtonClass);
   } else {
     buttonElement.disabled = false;
-    buttonElement.classList.remove('popup__button_inactive');
+    buttonElement.classList.remove(validation.inactiveButtonClass);
   }
 };
-
-export const validation = {
-  formInput: '.popup__container',
-  inputSelector: '.popup__text',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_inactive',
-  inputErrorClass: 'popup__text_error',
-  popupForm: '.popup__container'
-};
-
-
 
 const setEventListeners = (formElement) => {
   const inputList = Array.from(formElement.querySelectorAll(validation.inputSelector));
@@ -64,17 +64,17 @@ const setEventListeners = (formElement) => {
 };
 
 
-export const enableValidation = (formElement) => {
+export const enableValidation = () => {
   const formList = Array.from(document.querySelectorAll(validation.popupForm));
   formList.forEach((formElement) => {
-    setEventListeners(formElement);
+    setEventListeners(formElement, validation);
   });
 };
 
 export function closeButtonError() {
-  const button = document.querySelector(validation.submitButtonSelector);
+  const button = formElement.querySelector(validation.submitButtonSelector);
   button.disabled = true;
-  button.classList.add('popup__button_inactive');
+  button.classList.add(validation.inactiveButtonClass);
 };
 
 

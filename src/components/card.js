@@ -2,7 +2,7 @@ import { openImg } from './modal.js';
 import { cardTemplate } from './variables.js';
 import { sendLike, cardDel } from './api.js';
 
-export function createCard(cardEl) {
+export function createCard(cardEl, myId) {
   const card = cardTemplate.querySelector('.element').cloneNode(true);
   const likeNumber = card.querySelector('.element__likes_number');
   if (cardEl.likes.length === 0) {
@@ -10,8 +10,6 @@ export function createCard(cardEl) {
   } else {
     likeNumber.classList.remove('element__likes_number_hidden');
   }
-  const ownerid = card.setAttribute('ownerid', cardEl.owner._id);
-  const myId = '65b6aacc51e72cecf0fc46a7';
   const cardId = card.setAttribute('id', cardEl._id);
   const elementsImg = card.querySelector('.element__img');
   const elementsTitle = card.querySelector('.element__title');
@@ -19,11 +17,28 @@ export function createCard(cardEl) {
   elementsImg.alt = cardEl.name;
   elementsTitle.textContent = cardEl.name;
   likeNumber.textContent = cardEl.likes.length;
-  elementsImg.addEventListener('click', openImg);
+  elementsImg.addEventListener('click', () => openImg(cardEl));
   const like = card.querySelector('.element__heart');
-  like.addEventListener('click', () => sendLike(card)
-  .then(() => {
-    clickLike(card)
+  cardEl.likes.forEach((cardLike) => {
+  if (cardLike._id == myId) {
+    like.classList.add('element__heart_active');
+    }
+  });
+  let isLiked = false;
+  like.addEventListener('click', () => {
+    if (like.classList.contains('element__heart_active')) {
+      isLiked = true;
+    }
+  });
+  like.addEventListener('click', () => sendLike(card, isLiked)
+  .then((res) => {
+    like.classList.toggle('element__heart_active');
+    likeNumber.textContent = res.likes.length;
+    if (likeNumber.textContent == '0') {
+      likeNumber.classList.add('element__likes_number_hidden');
+    } else {
+      likeNumber.classList.remove('element__likes_number_hidden');
+    }
   })
   .catch((err) => {
     console.log('Ошибка. Запрос не выполнен: ', err);
@@ -35,30 +50,13 @@ export function createCard(cardEl) {
     }
   exit.addEventListener('click', () => cardDel(card)
   .then(() => {
-    deleteCard(card)
+    card.remove();
   })
   .catch((err) => {
     console.log('Ошибка. Запрос не выполнен: ', err);
   })
   );
   return card;
-};
-
-export function deleteCard(cardId) {
-  cardId.remove();
-};
-
-export function clickLike(cardId) {
-  sendLike(cardId)
-  .then((res) => {
-    document.getElementById(cardId.id).querySelector('.element__heart').classList.toggle('element__heart_active');
-    document.getElementById(cardId.id).querySelector('.element__likes_number').textContent = res.likes.length;
-  if (document.getElementById(cardId.id).querySelector('.element__likes_number').textContent == '0') {
-    document.getElementById(cardId.id).querySelector('.element__likes_number').classList.add('element__likes_number_hidden');
-  } else {
-    document.getElementById(cardId.id).querySelector('.element__likes_number').classList.remove('element__likes_number_hidden');
-  }
-})
 };
 
 

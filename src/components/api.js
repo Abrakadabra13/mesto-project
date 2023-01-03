@@ -1,5 +1,3 @@
-import { avatarInput, nameInput, jobInput, cardName, cardLink } from './variables.js';
-
 export const config = {
   baseUrl: 'https://nomoreparties.co/v1/plus-cohort-15',
   headers: {
@@ -15,81 +13,72 @@ export const checkResponse = (res) => {
   return Promise.reject(`Ошибка: ${res.status}`);
 };
 
+function request(url, options) {
+  return fetch(url, options).then(checkResponse)
+};
+
 export const getCards = () => {
-  return fetch(`${config.baseUrl}/cards`, {
+  return request(`${config.baseUrl}/cards`, {
   headers: config.headers
   })
-  .then(checkResponse)
 };
 
 
 export const getInfo = () => {
-  return fetch(`${config.baseUrl}/users/me`, {
+  return request(`${config.baseUrl}/users/me`, {
     headers: config.headers
   })
-    .then(checkResponse)
 };
 
-export const sendProfile = () => {
-  return fetch(`${config.baseUrl}/users/me`, {
+export const sendProfile = (name, about) => {
+  return request(`${config.baseUrl}/users/me`, {
     headers: config.headers,
     method: 'PATCH',
     body: JSON.stringify({
-      name: nameInput.value,
-      about: jobInput.value
+      name: name,
+      about: about,
     })
   })
-  .then(checkResponse)
 };
 
-export const sendNewCard = () => {
-  return fetch(`${config.baseUrl}/cards`, {
+export const sendNewCard = (name, link) => {
+  return request(`${config.baseUrl}/cards`, {
     headers: config.headers,
     method: 'POST',
     body: JSON.stringify({
-      name: cardName.value,
-      link: cardLink.value
+      name: name,
+      link: link,
     })
   })
-  .then(checkResponse)
 };
 
 
-export const sendAvatar = () => {
-  return fetch(`${config.baseUrl}/users/me/avatar`, {
+export const sendAvatar = (avatar) => {
+  return request(`${config.baseUrl}/users/me/avatar`, {
     headers: config.headers,
     method: 'PATCH',
     body: JSON.stringify({
-      avatar: avatarInput.value,
+      avatar: avatar,
     })
   })
-  .then(checkResponse)
 };
 
 export const cardDel = (cardId) => {
-  return fetch(`${config.baseUrl}/cards/${cardId.id}`, {
+  return request(`${config.baseUrl}/cards/${cardId.id}`, {
     method: 'DELETE',
     headers: config.headers
   })
-  .then(checkResponse)
 };
 
-export const sendLike = (cardId) => {
 
+export const sendLike = (cardId, isLiked) => {
   let met = 'PUT';
-  if(document.getElementById(cardId.id).querySelector('.element__heart').classList.contains('element__heart_active')) {
+  if (isLiked) {
     met = 'DELETE';
   }
 
-  return fetch(`${config.baseUrl}/cards/likes/${cardId.id}`, {
+  return request(`${config.baseUrl}/cards/likes/${cardId.id}`, {
     method: met,
     headers: config.headers,
   })
-  .then(checkResponse)
 };
-
-export const promises = [getCards, getInfo, cardDel, sendProfile, sendNewCard, sendAvatar, sendLike];
-
-
-
-
