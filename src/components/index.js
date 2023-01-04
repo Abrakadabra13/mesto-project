@@ -1,7 +1,7 @@
 import '../index.css';
-import { enableValidation, closeButtonError } from './validate.js';
+import { enableValidation, disableButton, validation } from './validate.js';
 import { closePopup, openPopup } from './modal.js';
-import { avatarImg, avatarButton, formElementAvatar, avatarInput, popupAvatar,container, formElementCard, profileTitle, profileSubtitle, popupProfile, cardName, cardLink, popupCard, popupsClose, popupEdit, popupAddCard, formElementProfile, nameInput, jobInput } from './variables.js';
+import { avatarImg, avatarButton, formElementAvatar, avatarInput, popupAvatar,container, formElementCard, profileTitle, profileSubtitle, popupProfile, cardName, cardLink, popupCard, closeButtons, popupEdit, popupAddCard, formElementProfile, nameInput, jobInput } from './variables.js';
 import { createCard } from './card.js';
 import { sendAvatar, getCards, getInfo, sendProfile, sendNewCard } from './api.js';
 
@@ -38,12 +38,11 @@ function saveProfilePopup(evt) {
     console.error('Ошибка. Запрос не выполнен: ', err);
   })
   .finally(() => {
-    const button = document.querySelector('.popup__button');
-    button.textContent = 'Сохранить';
+    evt.submitter.textContent = 'Сохранить';
   })
 };
 
-popupsClose.forEach((item) =>
+closeButtons.forEach((item) =>
   item.addEventListener('click', function(evt) {
     closePopup(evt.target.closest('.popup'));
   }
@@ -53,18 +52,18 @@ popupEdit.addEventListener('click', function() {
   openPopup(popupProfile);
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
-  closeButtonError()
+  disableButton(formElementProfile)
 });
 
 popupAddCard.addEventListener('click', function() {
   openPopup(popupCard);
-  closeButtonError()
+  disableButton(formElementCard)
 });
 
 
 avatarButton.addEventListener('click', function() {
   openPopup(popupAvatar);
-  closeButtonError()
+  disableButton(formElementAvatar)
 })
 
 function addAvatar(evt) {
@@ -83,8 +82,7 @@ function addAvatar(evt) {
     console.log('Ошибка. Запрос не выполнен: ', err);
   })
   .finally(() => {
-    const button = document.querySelector('.popup__button_avatar');
-    button.textContent = 'Сохранить';
+    evt.submitter.textContent = 'Сохранить';
   })
 }
 
@@ -94,7 +92,7 @@ formElementProfile.addEventListener('submit', saveProfilePopup);
 
 formElementCard.addEventListener('submit', addCard);
 
-enableValidation();
+enableValidation(validation);
 
 function renderCard(container, card) {
   container.prepend(card)
@@ -106,6 +104,9 @@ function addCard(evt) {
   sendNewCard(cardName.value, cardLink.value)
   .then((card) => {
     renderCard(container, createCard(card));
+    if(card.owner._id == myId) {
+      document.querySelector('.element__delete').style.display = 'block';
+    }
     closePopup(popupCard);
   })
   .then(() => {
@@ -116,8 +117,7 @@ function addCard(evt) {
     console.log('Ошибка. Запрос не выполнен: ', err);
   })
   .finally(() => {
-    const button = document.querySelector('.popup__button_card');
-    button.textContent = 'Сохранить';
+    evt.submitter.textContent = 'Сохранить';
   })
 };
 

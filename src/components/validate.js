@@ -1,12 +1,9 @@
-import { formElement } from "./variables";
-
 export const validation = {
   formInput: '.popup__container',
   inputSelector: '.popup__text',
   submitButtonSelector: '.popup__button',
   inactiveButtonClass: 'popup__button_inactive',
   inputErrorClass: 'popup__text_error',
-  popupForm: '.popup__container'
 };
 
 export const hideInputError = (formElement, formInput) => {
@@ -51,7 +48,7 @@ const toggleButtonState = (inputList, buttonElement) => {
   }
 };
 
-const setEventListeners = (formElement) => {
+const setEventListeners = (formElement, validation) => {
   const inputList = Array.from(formElement.querySelectorAll(validation.inputSelector));
   const buttonElement = formElement.querySelector(validation.submitButtonSelector);
   buttonElement.disabled = true;
@@ -64,14 +61,14 @@ const setEventListeners = (formElement) => {
 };
 
 
-export const enableValidation = () => {
-  const formList = Array.from(document.querySelectorAll(validation.popupForm));
+export const enableValidation = (validation) => {
+  const formList = Array.from(document.querySelectorAll(validation.formInput));
   formList.forEach((formElement) => {
     setEventListeners(formElement, validation);
   });
 };
 
-export function closeButtonError() {
+export function disableButton(formElement) {
   const button = formElement.querySelector(validation.submitButtonSelector);
   button.disabled = true;
   button.classList.add(validation.inactiveButtonClass);

@@ -2,6 +2,8 @@ import { openImg } from './modal.js';
 import { cardTemplate } from './variables.js';
 import { sendLike, cardDel } from './api.js';
 
+let isLiked;
+
 export function createCard(cardEl, myId) {
   const card = cardTemplate.querySelector('.element').cloneNode(true);
   const likeNumber = card.querySelector('.element__likes_number');
@@ -24,10 +26,11 @@ export function createCard(cardEl, myId) {
     like.classList.add('element__heart_active');
     }
   });
-  let isLiked = false;
   like.addEventListener('click', () => {
     if (like.classList.contains('element__heart_active')) {
       isLiked = true;
+    } else {
+      isLiked = false;
     }
   });
   like.addEventListener('click', () => sendLike(card, isLiked)
